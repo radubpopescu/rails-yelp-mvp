@@ -1,0 +1,14 @@
+<%= simple_form_for [@restaurant] do |f| %>
+        <% if @restaurant.errors.any? %>
+          <ul>
+            <% @restaurant.errors.full_messages do |message| %>
+          <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+        <%= f.input :name, placeholder: "Great place" %>
+        <%= f.input :address %>
+        <%= f.input :phone_number %>
+        <%= f.input :category %>
+        <%= f.submit "add a review", class: "btn btn-primary" %>
+      <% end %>
